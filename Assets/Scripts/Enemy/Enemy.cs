@@ -46,6 +46,9 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        Drop drop = Instantiate(GameManager.Instance.DropPrefab);
+        drop.transform.position = new Vector3(transform.position.x, 1, transform.position.z);
+        drop.Score = Data.PointsGained;
         Destroy(gameObject);
     }
 

@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public Player Player;
     public Material DamageMaterial;
+    public Drop DropPrefab;
     public UIManager UIManager;
     public CinemachineShake CinemachineShake;
 }

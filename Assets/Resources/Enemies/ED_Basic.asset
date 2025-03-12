@@ -17,3 +17,4 @@ MonoBehaviour:
   SightDistance: 20
   Damage: 1
   SpawnFrequency: 1
+  PointsGained: 10

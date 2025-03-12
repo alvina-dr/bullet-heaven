@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public PlayerMovement PlayerMovement;
     public PlayerInputManager PlayerInputManager;
     public Damageable Damageable;
+    public PlayerScore PlayerScore;
 
     [Header("Components")]
     public CharacterController CharacterController;

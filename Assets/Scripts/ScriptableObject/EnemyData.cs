@@ -8,4 +8,5 @@ public class EnemyData : ScriptableObject
     public float SightDistance;
     public int Damage;
     public float SpawnFrequency;
+    public int PointsGained;
 }
