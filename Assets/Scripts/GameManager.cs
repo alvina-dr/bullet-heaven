@@ -20,4 +20,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public Player Player;
+    public Material DamageMaterial;
+    public UIManager UIManager;
+    public CinemachineShake CinemachineShake;
 }

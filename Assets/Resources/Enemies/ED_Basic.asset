@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa53997cd7b8ba74283e77e52cf3d8ca, type: 3}
   m_Name: ED_Basic
   m_EditorClassIdentifier: 
+  EnemyPrefab: {fileID: 308476913162909750, guid: 5ed0cfed4e459a047b7de31c48c8e1e2, type: 3}
   WalkSpeed: 0.1
   SightDistance: 20
+  Damage: 1
+  SpawnFrequency: 1

@@ -355,8 +355,11 @@ GameObject:
   - component: {fileID: 2802888771941036489}
   - component: {fileID: 3514559821282177581}
   - component: {fileID: 2552896067971392496}
+  - component: {fileID: 3156360142917740669}
+  - component: {fileID: 8989326584403118370}
   - component: {fileID: 3778420853615224821}
   - component: {fileID: 1846773090627177520}
+  - component: {fileID: 4338486969880659787}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -396,7 +399,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMovement: {fileID: 3514559821282177581}
   PlayerInputManager: {fileID: 2552896067971392496}
+  Damageable: {fileID: 8989326584403118370}
   CharacterController: {fileID: 1846773090627177520}
+  OriginalMaterial: {fileID: 2100000, guid: fb025b3fbceea854da7eb2a6b8f7f188, type: 2}
+  MeshRenderer: {fileID: 867304467749258624}
 --- !u!114 &3514559821282177581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +431,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 2802888771941036489}
+--- !u!114 &3156360142917740669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753686361072404193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d193b931aa192f469f2e9fea355a3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Frequency: 3
+  _attackZonePrefab: {fileID: 2741863611539737390, guid: f1a289695da412545b3cc06c9b240a47, type: 3}
+--- !u!114 &8989326584403118370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753686361072404193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a7c6f1edcf147479c1f4b41e3b2917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 10
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2802888771941036489}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: DamageFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3778420853615224821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,4 +530,25 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &4338486969880659787
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753686361072404193}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
