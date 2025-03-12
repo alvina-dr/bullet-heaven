@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public EnemyData Data;
     private Vector3 _wanderDirection;
     public Damageable Damageable;
+    [SerializeField] private ParticleSystem _deathParticles;
 
     public void Move()
     {
@@ -49,6 +50,8 @@ public class Enemy : MonoBehaviour
         Drop drop = Instantiate(GameManager.Instance.DropPrefab);
         drop.transform.position = new Vector3(transform.position.x, 1, transform.position.z);
         drop.Score = Data.PointsGained;
+        _deathParticles.transform.parent = null;
+        _deathParticles.gameObject.SetActive(true);
         Destroy(gameObject);
     }
 

@@ -7,23 +7,26 @@ public class Damageable : MonoBehaviour
     public int Health;
     public UnityEvent OnDamage;
     public UnityEvent OnDie;
+    public Transform MeshTransform;
 
     public void Damage(int damage)
     {
         OnDamage?.Invoke();
         Health -= damage;
 
-        Sequence damageSequence = DOTween.Sequence();
-        damageSequence.Append(transform.DOScale(1.4f, .1f));
-        damageSequence.Append(transform.DOScale(1f, .04f));
-        damageSequence.Play();
-
         GameManager.Instance.UIManager.TextPopperManager.PopText(damage.ToString(), Camera.main.WorldToScreenPoint(transform.position));
 
-        if (Health <= 0)
+        Sequence damageSequence = DOTween.Sequence();
+        damageSequence.Append(MeshTransform.DOScale(1.4f, .1f));
+        damageSequence.Append(MeshTransform.DOScale(1f, .04f));
+        damageSequence.AppendCallback(() =>
         {
-            Die();
-        }
+            if (Health <= 0)
+            {
+                Die();
+            }
+        });
+        damageSequence.Play();
     }
 
     public void Die()
