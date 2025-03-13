@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public CharacterController CharacterController;
+    public Rigidbody Rigidbody;
     public EnemyData Data;
     private Vector3 _wanderDirection;
     public Damageable Damageable;
@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
         if (Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position) <= Data.SightDistance)
         {
             Vector3 _moveDirection = (GameManager.Instance.Player.transform.position - transform.position).normalized;
-            CharacterController.Move(new Vector3(_moveDirection.x, CharacterController.velocity.y, _moveDirection.z) * Data.WalkSpeed);
+            Rigidbody.linearVelocity = (new Vector3(_moveDirection.x, Rigidbody.linearVelocity.y, _moveDirection.z) * Data.WalkSpeed * Time.deltaTime);
         }
         else
         {
@@ -25,15 +25,16 @@ public class Enemy : MonoBehaviour
 
     public void Wander()
     {
-        CharacterController.Move(new Vector3(_wanderDirection.x, CharacterController.velocity.y, _wanderDirection.z) * Data.WalkSpeed);
+        Rigidbody.linearVelocity = (new Vector3(_wanderDirection.x, Rigidbody.linearVelocity.y, _wanderDirection.z) * Data.WalkSpeed * Time.deltaTime);
     }
 
     private void Start()
     {
+        Damageable.Health = Data.Health;
         StartCoroutine(ChooseDirection());
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Move();
     }

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -12,14 +13,20 @@ public class Player : MonoBehaviour
     [Header("Components")]
     public CharacterController CharacterController;
     public Material OriginalMaterial;
-    public MeshRenderer MeshRenderer;
+    public List<MeshRenderer> MeshRendererList;
 
     public void DamageFeedback()
     {
-        MeshRenderer.material = GameManager.Instance.DamageMaterial;
+        for (int i = 0; i < MeshRendererList.Count; i++)
+        {
+            MeshRendererList[i].material = GameManager.Instance.DamageMaterial;
+        }
         DOVirtual.DelayedCall(.1f, () =>
         {
-            MeshRenderer.material = OriginalMaterial;
+            for (int i = 0; i < MeshRendererList.Count; i++)
+            {
+                MeshRendererList[i].material = OriginalMaterial;
+            }
         });
 
         GameManager.Instance.CinemachineShake.ShakeCamera(2, .1f);

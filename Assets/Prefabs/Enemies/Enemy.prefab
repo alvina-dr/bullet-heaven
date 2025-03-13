@@ -4988,7 +4988,8 @@ GameObject:
   - component: {fileID: 4878315524654316888}
   - component: {fileID: 308476913162909750}
   - component: {fileID: 8031432378395883607}
-  - component: {fileID: 7422466944557950489}
+  - component: {fileID: 1797838003249767279}
+  - component: {fileID: 8841147576354724683}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -5025,7 +5026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e80a9a73b89a22418f309a2b40b6b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterController: {fileID: 7422466944557950489}
+  Rigidbody: {fileID: 1797838003249767279}
   Data: {fileID: 11400000, guid: 95ca18cecca3e5a49b8c717591f03951, type: 2}
   Damageable: {fileID: 8031432378395883607}
   _deathParticles: {fileID: 5342649846205505557}
@@ -5061,8 +5062,35 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   MeshTransform: {fileID: 141954066147866672}
---- !u!143 &7422466944557950489
-CharacterController:
+--- !u!54 &1797838003249767279
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312004179265556656}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!135 &8841147576354724683
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5076,13 +5104,9 @@ CharacterController:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1
   m_Radius: 0.5
-  m_SlopeLimit: 0
-  m_StepOffset: 0
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}

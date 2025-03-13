@@ -20,7 +20,7 @@ public class AttackZone : MonoBehaviour
     {
         if (other.TryGetComponent(out Enemy enemy))
         {
-            enemy.Damageable.Damage(1);
+            enemy.Damageable.Damage(10);
         }
     }
 }

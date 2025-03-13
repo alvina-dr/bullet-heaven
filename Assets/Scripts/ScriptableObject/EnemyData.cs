@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     public Enemy EnemyPrefab;
+    public int Health;
     public float WalkSpeed;
     public float SightDistance;
     public int Damage;

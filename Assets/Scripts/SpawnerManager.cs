@@ -32,6 +32,6 @@ public class SpawnerManager : MonoBehaviour
         float _angle = Random.Range(0f, 2.0f * Mathf.PI);
         Vector3 pos = new Vector3((_spawnRadius) * Mathf.Cos(_angle), 1, (_spawnRadius) * Mathf.Sin(_angle)) + new Vector3(GameManager.Instance.Player.transform.position.x, 0, GameManager.Instance.Player.transform.position.z);
         _enemy.transform.position = pos;
-        _enemy.CharacterController.enabled = true;
+        //_enemy.Rigidbody.enabled = true;
     }
 }
