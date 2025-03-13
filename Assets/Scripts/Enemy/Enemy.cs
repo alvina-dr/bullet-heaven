@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -9,6 +10,8 @@ public class Enemy : MonoBehaviour
     private Vector3 _wanderDirection;
     public Damageable Damageable;
     [SerializeField] private ParticleSystem _deathParticles;
+    [SerializeField] private List<MeshRenderer> _meshRendererList = new();
+    [SerializeField] private Material _originalMaterial;
 
     public void Move()
     {
@@ -39,6 +42,21 @@ public class Enemy : MonoBehaviour
         _wanderDirection = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)).normalized;
         yield return new WaitForSeconds(Random.Range(0.5f, 5));
         StartCoroutine(ChooseDirection());
+    }
+
+    public void DamageFeedback()
+    {
+        for (int i = 0; i < _meshRendererList.Count; i++)
+        {
+            _meshRendererList[i].material = GameManager.Instance.DamageMaterial;
+        }
+        DOVirtual.DelayedCall(.1f, () =>
+        {
+            for (int i = 0; i < _meshRendererList.Count; i++)
+            {
+                _meshRendererList[i].material = _originalMaterial;
+            }
+        });
     }
 
     public void Die()

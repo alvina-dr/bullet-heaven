@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
         });
 
         GameManager.Instance.CinemachineShake.ShakeCamera(2, .1f);
-
     }
 
     private void OnTriggerEnter(Collider other)

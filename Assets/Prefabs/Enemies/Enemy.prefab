@@ -5030,6 +5030,9 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: 95ca18cecca3e5a49b8c717591f03951, type: 2}
   Damageable: {fileID: 8031432378395883607}
   _deathParticles: {fileID: 5342649846205505557}
+  _meshRendererList:
+  - {fileID: 7673067744196241650}
+  _originalMaterial: {fileID: 2100000, guid: ffe12279589c6d54baaab998f8832642, type: 2}
 --- !u!114 &8031432378395883607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5045,7 +5048,19 @@ MonoBehaviour:
   Health: 1
   OnDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 308476913162909750}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: DamageFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDie:
     m_PersistentCalls:
       m_Calls:
