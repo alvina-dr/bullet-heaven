@@ -528,6 +528,7 @@ MonoBehaviour:
   MeshRendererList:
   - {fileID: 6640566622769828080}
   - {fileID: 617043059570222126}
+  LevelUpParticleSystemPrefab: {fileID: 6899064882134511077, guid: f5526d96d74e84a41bb8d050964c9dfe, type: 3}
 --- !u!114 &3514559821282177581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7ac07dbd927bc45880d864cac2d0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 2802888771941036489}
   CurrentScore: 0
   CurrentMaxScore: 20
 --- !u!114 &8989326584403118370

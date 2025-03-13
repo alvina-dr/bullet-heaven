@@ -19,13 +19,8 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Wander();
+            Rigidbody.linearVelocity = (new Vector3(_wanderDirection.x, Rigidbody.linearVelocity.y, _wanderDirection.z) * Data.WalkSpeed * Time.deltaTime);
         }
-    }
-
-    public void Wander()
-    {
-        Rigidbody.linearVelocity = (new Vector3(_wanderDirection.x, Rigidbody.linearVelocity.y, _wanderDirection.z) * Data.WalkSpeed * Time.deltaTime);
     }
 
     private void Start()

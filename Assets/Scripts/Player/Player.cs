@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public CharacterController CharacterController;
     public Material OriginalMaterial;
     public List<MeshRenderer> MeshRendererList;
+    public ParticleSystem LevelUpParticleSystemPrefab;
 
     public void DamageFeedback()
     {

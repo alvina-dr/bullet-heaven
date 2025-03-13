@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Direction != Vector3.zero)
         {
-            _mesh.transform.forward = Direction;
+            _mesh.transform.forward = Vector3.RotateTowards(_mesh.transform.forward, Direction, 10 * Time.deltaTime, 0);
         }
     }
 }
