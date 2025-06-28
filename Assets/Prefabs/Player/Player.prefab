@@ -479,7 +479,10 @@ GameObject:
   - component: {fileID: 3514559821282177581}
   - component: {fileID: 2552896067971392496}
   - component: {fileID: 3156360142917740669}
+  - component: {fileID: 4242178898441853250}
+  - component: {fileID: 1846543873189237139}
   - component: {fileID: 8024735892361137377}
+  - component: {fileID: 3479549972791881921}
   - component: {fileID: 8989326584403118370}
   - component: {fileID: 3778420853615224821}
   - component: {fileID: 1846773090627177520}
@@ -572,6 +575,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Frequency: 3
   _attackZonePrefab: {fileID: 2741863611539737390, guid: f1a289695da412545b3cc06c9b240a47, type: 3}
+--- !u!114 &4242178898441853250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753686361072404193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d411113ee031c5489c1b982350f31d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 8418651076853558381, guid: b56f7de842eacde429c91f53057ae279, type: 3}
+  _frequency: 2
+--- !u!114 &1846543873189237139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753686361072404193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b931269855ae8443b9d45510cf8346a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 8418651076853558381, guid: 3e1870f6d3c0ea54c815134427200b22, type: 3}
+  _frequency: 5
 --- !u!114 &8024735892361137377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +617,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 2802888771941036489}
   CurrentScore: 0
-  CurrentMaxScore: 20
+  CurrentMaxScore: 100
+--- !u!114 &3479549972791881921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753686361072404193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba09ba4dee09f724382c44c3e2fa5e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootClosest: {fileID: 1846543873189237139}
+  FollowingZones: {fileID: 3156360142917740669}
 --- !u!114 &8989326584403118370
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         StartCoroutine(ChooseDirection());
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
     }

@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 3
+  _meshRenderer: {fileID: 1916764664808316307}
+  _blinkMaterial: {fileID: 2100000, guid: b6bc528061af7de4fa9a8d8bb72a6e33, type: 2}
+  _normalMaterial: {fileID: 2100000, guid: fb025b3fbceea854da7eb2a6b8f7f188, type: 2}
 --- !u!136 &5876246063199683196
 CapsuleCollider:
   m_ObjectHideFlags: 0

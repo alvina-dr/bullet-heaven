@@ -7,6 +7,11 @@ public class PlayerScore : MonoBehaviour
     [ReadOnly] public int CurrentScore;
     public int CurrentMaxScore;
 
+    private void Start()
+    {
+        GameManager.Instance.UIManager.ScoreText.SetTextValue(CurrentScore.ToString() + " / " + CurrentMaxScore.ToString());
+    }
+
     public void AddScore(int score)
     {
         CurrentScore += score;
@@ -19,6 +24,7 @@ public class PlayerScore : MonoBehaviour
         }
 
         GameManager.Instance.UIManager.ScoreBar.SetBarValue(CurrentScore, CurrentMaxScore);
+        GameManager.Instance.UIManager.ScoreText.SetTextValue(CurrentScore.ToString() + " / " + CurrentMaxScore.ToString());
     }
 
     public void LevelUp()
